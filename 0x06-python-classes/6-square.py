@@ -1,16 +1,21 @@
 #!/usr/bin/python3
+"""This module defines a class Square with position coordinates."""
+
 
 class Square:
+    """A class that defines a square with position coordinates."""
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
 
     @property
     def size(self):
+        """Retrieve the size of the square."""
         return self.__size
 
     @size.setter
     def size(self, value):
+        """Set the size of the square."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -19,10 +24,12 @@ class Square:
 
     @property
     def position(self):
+        """Retrieve the position of the square."""
         return self.__position
 
     @position.setter
     def position(self, value):
+        """Set the position of the square."""
         if not isinstance(value, tuple) or len(value) != 2 or \
            not all(isinstance(n, int) for n in value) or \
            not all(n >= 0 for n in value):
@@ -30,9 +37,11 @@ class Square:
         self.__position = value
 
     def area(self):
+        """Returns the area of the square."""
         return self.__size ** 2
 
     def my_print(self):
+        """Prints the square with the character #."""
         if self.__size == 0:
             print()
             return

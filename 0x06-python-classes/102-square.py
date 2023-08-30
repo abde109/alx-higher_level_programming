@@ -1,24 +1,9 @@
 #!/usr/bin/python3
+"""This module defines a class Square that can be compared."""
+
 
 class Square:
-    def __init__(self, size=0):
-        self.size = size
-
-    @property
-    def size(self):
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        if not isinstance(value, (int, float)):
-            raise TypeError("size must be a number")
-        if value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
-
-    def area(self):
-        return self.__size ** 2
-
+    # (Same as Task 4, but add the following methods)
     def __eq__(self, other):
         return self.area() == other.area()
 
