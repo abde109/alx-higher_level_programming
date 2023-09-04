@@ -1,0 +1,4 @@
+from 5-text_indentation import text_indentation
+text_indentation("Lorem ipsum. Dolor?")
+Lorem ipsum.
+Dolor?

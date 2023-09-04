@@ -1,0 +1,6 @@
+from 4-print_square import print_square
+print_square(4)
+####
+####
+####
+####
