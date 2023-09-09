@@ -1,15 +1,38 @@
+Test matrix_mul function
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Test with square matrices
 >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 [[7, 10], [15, 22]]
+
+Test with rectangular matrices
 >>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
 [[13, 16]]
->>> matrix_mul([[1, 2, 3]], [[3], [4], [5]])
-[[26]]
+
+Test with float numbers
+>>> matrix_mul([[1.5, 2.5], [3.5, 4.5]], [[1.5, 2.5], [3.5, 4.5]])
+[[12.5, 17.5], [28.5, 40.5]]
+
+Test with mixed integers and floats
+>>> matrix_mul([[1, 2.5], [3, 4]], [[1, 2], [3, 4]])
+[[8.5, 11.5], [15, 22]]
+
+Test with empty matrix
+>>> matrix_mul([], [[1, 2]])
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+Test with non-list input
 >>> matrix_mul("string", [[1, 2]])
 Traceback (most recent call last):
 TypeError: m_a must be a list
->>> matrix_mul([[1, 2]], "string")
+
+Test with non-rectangular matrix
+>>> matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
 Traceback (most recent call last):
-TypeError: m_b must be a list
->>> matrix_mul([[1, 2]], [[1, 2, 3]])
+TypeError: each row of m_a must be of the same size
+
+Test with incompatible matrices
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4], [5, 6]])
 Traceback (most recent call last):
 ValueError: m_a and m_b can't be multiplied
