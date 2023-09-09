@@ -1,4 +1,9 @@
-from 5-text_indentation import text_indentation
-text_indentation("Lorem ipsum. Dolor?")
-Lorem ipsum.
-Dolor?
+>>> text_indentation("Hello. How are you?")
+Hello.
+How are you?
+>>> text_indentation("What? Really:")
+What?
+Really:
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
