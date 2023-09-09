@@ -1,3 +1,15 @@
-from 100-matrix_mul import matrix_mul
-matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 [[7, 10], [15, 22]]
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+>>> matrix_mul([[1, 2, 3]], [[3], [4], [5]])
+[[26]]
+>>> matrix_mul("string", [[1, 2]])
+Traceback (most recent call last):
+TypeError: m_a must be a list
+>>> matrix_mul([[1, 2]], "string")
+Traceback (most recent call last):
+TypeError: m_b must be a list
+>>> matrix_mul([[1, 2]], [[1, 2, 3]])
+Traceback (most recent call last):
+ValueError: m_a and m_b can't be multiplied
