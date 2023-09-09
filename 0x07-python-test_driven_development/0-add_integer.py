@@ -13,4 +13,3 @@ def add_integer(a, b=98):
     if a != a or b != b:
         raise ValueError("cannot convert float NaN to integer")
     return int(a) + int(b)
-
