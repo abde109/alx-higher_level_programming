@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Enhanced Square class """
-Rectangle = __import__('9-rectangly').Rectangle
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
