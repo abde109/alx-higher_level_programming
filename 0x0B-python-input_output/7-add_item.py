@@ -17,5 +17,6 @@ def add_arguments():
     with open(filename, "w") as f:
         json.dump(my_list, f)
 
+
 if __name__ == "__main__":
     add_arguments()
