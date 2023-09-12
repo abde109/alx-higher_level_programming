@@ -4,6 +4,7 @@
 
 def pascal_triangle(n):
     """Return Pascal's Triangle with n rows."""
+
     if n <= 0:
         return []
     
