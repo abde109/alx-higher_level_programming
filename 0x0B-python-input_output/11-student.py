@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Student class with methods to serialize and deserialize instances."""
+"""Defines a Student class with methods"""
 
 
 class Student:
