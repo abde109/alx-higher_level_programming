@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """This module defines the Base class."""
+import json
+import csv
 
-import json, csv, turtle
 
 class Base:
     """
@@ -71,7 +72,7 @@ class Base:
             return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return []
-        
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
@@ -82,7 +83,8 @@ class Base:
             if list_objs is None or len(list_objs) == 0:
                 csvfile.write("")
             else:
-                writer = csv.DictWriter(csvfile, fieldnames=list_objs[0].to_dictionary().keys())
+                fieldnames = list_objs[0].to_dictionary().keys()
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())

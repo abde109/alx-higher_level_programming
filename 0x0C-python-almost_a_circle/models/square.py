@@ -1,10 +1,13 @@
-from models.rectangle import Rectangle  
+#!/usr/bin/python3
+"""This module defines the square class."""
+from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """
     Square class that inherits from Rectangle.
     """
-    
+
     def __init__(self, size, x=0, y=0, id=None):
         """
         Constructor for Square class.
@@ -12,7 +15,6 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
-    # Getter for 'size' attribute
     @property
     def size(self):
         """
@@ -20,7 +22,6 @@ class Square(Rectangle):
         """
         return self.width
 
-    # Setter for 'size' attribute
     @size.setter
     def size(self, value):
         """
@@ -30,14 +31,13 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    # Overloaded string representation
     def __str__(self):
         """
         Overloaded string representation of the Square object.
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.width)
 
-    # Update method for the Square class
     def update(self, *args, **kwargs):
         """
         Update method to set attributes.
@@ -52,7 +52,6 @@ class Square(Rectangle):
                 if key in attributes:
                     setattr(self, key, value)
 
-    # Convert the Square object to a dictionary
     def to_dictionary(self):
         """
         Method to return the dictionary representation of the Square object.
