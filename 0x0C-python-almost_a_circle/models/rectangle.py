@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This module defines the Rectangle class that inherits from Base."""
+from models.base import Base
 
-from models.base import Base 
 
 class Rectangle(Base):
     """This class represents a Rectangle."""
@@ -69,14 +69,36 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-    
+
     def area(self):
         """Calculate and return the area of the Rectangle."""
         return self.__width * self.__height
 
     def display(self):
         """Prints the Rectangle instance with the '#' character."""
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
+        for i in range(self.__y):
             print()
+        for i in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
+
+    def __str__(self):
+        """Return the string representation of the Rectangle instance."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """Updates the Rectangle instance."""
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        if args:
+            for i, value in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of the Rectangle."""
+        return {'id': self.id, 'width': self.__width, 'height': self.__height,
+                'x': self.__x, 'y': self.__y}
