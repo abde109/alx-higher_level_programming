@@ -18,8 +18,7 @@ if __name__ == "__main__":
     )
 
     cur = conn.cursor()
-    query = "SELECT * FROM states WHERE CONVERT(`name` USING Latin1) \
-             COLLATE Latin1_General_CS = %s;"
+    query = "SELECT * FROM states WHERE name = %s;"
     cur.execute(query, (sys.argv[4],))
     query_rows = cur.fetchall()
     for row in query_rows:
