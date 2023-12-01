@@ -2,6 +2,8 @@
 """
 Python script that fetches a URL using urllib
 """
+
+
 import urllib.request
 
 if __name__ == "__main__":
