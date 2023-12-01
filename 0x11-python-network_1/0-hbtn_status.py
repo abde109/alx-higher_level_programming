@@ -2,12 +2,11 @@
 """
 Python script that fetches a URL using urllib
 """
-
-
 import urllib.request
 
 if __name__ == "__main__":
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+    url = 'https://alx-intranet.hbtn.io/status'
+    with urllib.request.urlopen(url) as response:
         content = response.read()
         print("Body response:")
         print("\t- type: {}".format(type(content)))

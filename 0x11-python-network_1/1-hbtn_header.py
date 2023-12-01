@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that displays the value of a specific variable in the response header
+Python script that displays the value of a specific variable
 """
 import urllib.request
 import sys
