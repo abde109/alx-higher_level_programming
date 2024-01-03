@@ -4,7 +4,7 @@ const request = require('request');
 
 const api = 'https://swapi.dev/api/films/' + process.argv[2];
 
-request(apiUrl, function (error, response, body) {
+request(api, function (error, response, body) {
   if (error) {
     console.error(error);
   } else if (response.statusCode === 200) {
