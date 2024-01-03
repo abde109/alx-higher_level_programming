@@ -13,7 +13,6 @@ function fetch(api) {
 }
 
 fetch(api).then(movie => {
-    console.log(movie);
     const character = movie.characters.map(Url => fetch(Url));
 
     character.reduce((prev, curr) => {
