@@ -2,22 +2,23 @@
 
 const request = require('request');
 const fs = require('fs');
-const url = process.argv[2];
+const api = process.argv[2];
 const file = process.argv[3];
 
-request(url, function(error, response, body) {
-    if (error) {
-        console.error(error);
-    } else if (response.statusCode === 200){
-        fs.writeFile(file, body, 'utf-8', function(err) {
-            if (err) {
-                console.error(err);
-            } else {
-                console.log('File saved successfully!');
-            }
-        });
-    } else {
-        console.log('code: '+ response.statusCode);
+const writeToFile = (data) => {
+  fs.writeFile(file, data, 'utf8', (err) => {
+    if (err) {
+      console.error(err);
     }
-});
+  });
+};
 
+request(api, (err, response, body) => {
+  if (err) {
+    console.error(err);
+  } else if (response.statusCode === 200) {
+    writeToFile(body);
+  } else {
+    console.log('code: ' + response.statusCode);
+  }
+});
